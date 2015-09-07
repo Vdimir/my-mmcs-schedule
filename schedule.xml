@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schedule>
+    <column day="mon">
+        <cell>
+            <lesson week="all" type="'sem">HC</lesson>
+        </cell>
+
+        <cell>
+            <lesson week="all" type="'sem">HC</lesson>
+        </cell>
+
+        <cell>
+            <lesson week="all" type="lect">DataBase</lesson>
+        </cell>
+        <cell>
+            <lesson week="all" type="sem">Choise</lesson>
+        </cell>
+        <cell>
+            <lesson week="upper" type="lect">Choise</lesson>
+            <lesson week="lower" type="sem">Choise</lesson>
+        </cell>
+
+    </column>
+
+    <column day="tue">
+
+        <cell>
+            <lesson week="all" type="sem">OBJ</lesson>
+        </cell>
+
+        <cell>
+            <lesson week="upper" type="sem">OBJ</lesson>
+            <lesson week="lower" type="sem">DataBase</lesson>
+        </cell>
+
+        <cell>
+            <lesson week="lower" type="sem">DataBase</lesson>
+        </cell>
+    </column>
+    <column day="wed">
+
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+
+        <cell>
+            <lesson week="all" type="sem">CHM</lesson>
+        </cell>
+        <cell>
+            <lesson week="upper" type="sem">CHM</lesson>
+        </cell>
+    </column>
+    <column day="tue">
+    </column>
+    <column day="fri">
+
+        <cell>
+            <lesson week="all" type="lect">TVIMS</lesson>
+        </cell>
+
+        <cell>
+            <lesson week="all" type="lect">CHM</lesson>
+        </cell>
+
+    </column>
+
+    <column day="sat">
+
+        <cell></cell>
+        <cell>
+            <lesson week="all" type="lect">SC1</lesson>
+        </cell>
+
+        <cell>
+            <lesson week="all" type="sem">TVIMS</lesson>
+        </cell>
+
+        <cell>
+            <lesson week="all" type="sem">SC2</lesson>
+        </cell>
+
+        <cell>
+            <lesson week="all" type="sem">SC2</lesson>
+        </cell>
+    </column>
+</schedule>
