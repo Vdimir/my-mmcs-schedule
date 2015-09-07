@@ -18,32 +18,40 @@ def write_html(body):
 
 from ScheduleBuilder import ScheduleHtmlTableBulder
 
-bldr = ScheduleHtmlTableBulder()
+table_builder = ScheduleHtmlTableBulder()
 
 fpath = "schedule.xml"
 xmltree = ElTree.parse(fpath)
 for day_elem in xmltree.iter('column'):
     for cell in day_elem.iter('cell'):
+        up_text = {'text': '', 'class': ''}
+        low_text = {'text': '', 'class': ''}
+
         if cell.find("lesson") is None:
-            bldr.add_big_cell()
+            table_builder.add_cell(up_text)
             continue
-        all_cell = cell.find("lesson[@week='all']")
+        xml_all_cell = cell.find("lesson[@week='all']")
 
-        if all_cell is not None:
-            bldr.add_big_cell(all_cell.text)
+        if xml_all_cell is not None:
+            up_text['text'] = xml_all_cell.text
+            up_text['class'] = '{0} {1}'.format(xml_all_cell.attrib['week'],
+                                                xml_all_cell.attrib['type'])
+            table_builder.add_cell(up_text)
         else:
-            up_text = ''
-            low_text = ''
-            up_cell = cell.find("lesson[@week='upper']")
-            low_cell = cell.find("lesson[@week='lower']")
+            xml_up_cell = cell.find("lesson[@week='upper']")
+            xml_low_cell = cell.find("lesson[@week='lower']")
 
-            if up_cell is not None:
-                up_text = up_cell.text
-            if low_cell is not None:
-                low_text = low_cell.text
+            if xml_up_cell is not None:
+                up_text['text'] = xml_up_cell.text
+                up_text['class'] = '{0} {1}'.format(xml_up_cell.attrib['week'],
+                                                    xml_up_cell.attrib['type'])
+            if xml_low_cell is not None:
+                low_text['text'] = xml_low_cell.text
+                low_text['class'] = '{0} {1}'.format(xml_low_cell.attrib['week'],
+                                                     xml_low_cell.attrib['type'])
 
-            bldr.add_little_cells(first_text=up_text, second_text=low_text)
+            table_builder.add_cell(up_text, low_text)
 
-    bldr.new_column()
+    table_builder.new_column()
 
-write_html(bldr.htmltable)
+write_html(table_builder.htmltable)

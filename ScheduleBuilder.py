@@ -60,57 +60,53 @@ def translate_title(text):
     return translate_dic[text]
 
 
+def convert_text_to_tablecell(text='', html_class='', big=False):
+    text_str = translate_title(text)
+    attrs = {}
+    if big:
+        attrs['rowspan'] = 2
+    attrs['class'] = 'text-center col-md-2' + ' ' + html_class
+    return HTML.TableCell(text_str, attribs=attrs)
+
+
 class ScheduleHtmlTableBulder:
     def __init__(self):
         self.htmltable = HTML.Table(header_row=header_row,
                                     attribs={'class': 'table table-bordered'},
                                     style='',
                                     border=0)
-        self.create_empty_htmltable()
-        self.row_iter = self._get_row_iter()
+        self._initialize_empty_htmltable()
+        self._clear_row_iter()
 
-    def _get_row_iter(self):
-        # return iter(pairwise(self.htmltable.rows))
-        return pairwise(self.htmltable.rows)
+    def add_cell(self, new_up_row, new_low_row=None):
+        current_up_row, current_low_row = self._get_sub_rows()
+        if new_low_row is None:
+            current_up_row.append(convert_text_to_tablecell(new_up_row['text'], html_class=new_up_row['class'], big=True))
+        else:
+            current_up_row.append(convert_text_to_tablecell(new_up_row['text'], html_class=new_up_row['class']))
+            current_low_row.append(convert_text_to_tablecell(new_low_row['text'], html_class=new_low_row['class']))
 
-    def new_column(self):
-        while True:
-            try:
-                self.add_big_cell()
-            except StopIteration:
-                break
-        self.row_iter = self._get_row_iter()
+    def _clear_row_iter(self):
+        self.row_iter = pairwise(self.htmltable.rows)
 
     def _get_sub_rows(self):
         return self.row_iter.next()
 
-    def add_big_cell(self, text=''):
-        up_row, low_row = self._get_sub_rows()
-        up_row.append(self.convert_text_to_tablecell(text, big=True))
+    def _append_empty_cell(self):
+        current_up_row, _ = self._get_sub_rows()
+        current_up_row.append(convert_text_to_tablecell(html_class='all', big=True))
 
-    def add_little_cells(self, first_text='', second_text=''):
-        up_row, low_row = self._get_sub_rows()
-        up_row.append(self.convert_text_to_tablecell(first_text))
-        low_row.append(self.convert_text_to_tablecell(second_text))
-
-    def create_empty_htmltable(self):
+    def _initialize_empty_htmltable(self):
         for c in first_col:
             self.htmltable.rows.append([
                 HTML.TableCell(c.replace('\n', '<br>'), attribs={'rowspan': 2, 'class': 'time'})
             ])
             self.htmltable.rows.append([])
 
-    def convert_text_to_tablecell(self, text=None, big=False):
-        if text is None:
-            text_str = ''
-        else:
-            text_str = str(text)
-        text_str = translate_title(text_str)
-        attrs = {}
-        if big:
-            attrs['rowspan'] = 2
-        attrs['class'] = 'text-center col-md-2'
-        return HTML.TableCell(text_str, attribs=attrs)
-
-    def get_res(self):
-        return self.htmltable
+    def new_column(self):
+        while True:
+            try:
+                self._append_empty_cell()
+            except StopIteration:
+                break
+        self._clear_row_iter()
