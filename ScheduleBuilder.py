@@ -5,37 +5,9 @@ import HTML
 
 import xml.etree.ElementTree as ElTree
 import itertools
+import static_data
 
-first_col = [
-    """8:00
-8:45
--
-8:50
-9:35""",
-
-    """9:50
-10:35
--
-10:40
-11:25""",
-
-    """11:55
-12:40
--
-12:45
-13:30""",
-
-    """13:45
-14:30
--
-14:35
-15:20""",
-
-    """15:50
-16:35
--
-16:40
-17:25"""]
+first_col = static_data.lesson_times
 
 header_row = [HTML.TableCell('', attribs={'class': ''}),
               HTML.TableCell('Mon', attribs={'class': 'day-of-week day_mon'}),
@@ -53,14 +25,7 @@ def pairwise(iterable):
 
 
 def translate_title(text):
-    translate_dic = {'HC': 'Гуманитарный курс',
-                     'DataBase': 'Базы данных',
-                     'Choise': 'Курс по выбору',
-                     'CHM': 'Численные методы',
-                     'TVIMS': 'Тер Вер',
-                     'SC1': 'Теория информации',
-                     'SC2': 'Криптография',
-                     'OBJ': 'БЖД'}
+    translate_dic = static_data.course_names
     if text not in translate_dic:
         return text
     return translate_dic[text]
@@ -117,4 +82,3 @@ class ScheduleHtmlTableBulder:
             except StopIteration:
                 break
         self._clear_row_iter()
-
