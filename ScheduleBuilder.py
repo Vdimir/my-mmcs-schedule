@@ -36,7 +36,14 @@ first_col = [
 -
 16:40
 17:25"""]
-header_row = ['', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб']
+
+header_row = [HTML.TableCell('', attribs={'class': ''}),
+              HTML.TableCell('Mon', attribs={'class': 'day-of-week day_mon'}),
+              HTML.TableCell('Tue', attribs={'class': 'day-of-week day_tue'}),
+              HTML.TableCell('Wrd', attribs={'class': 'day-of-week day_wed'}),
+              HTML.TableCell('Thu', attribs={'class': 'day-of-week day_thu'}),
+              HTML.TableCell('Fri', attribs={'class': 'day-of-week day_fri'}),
+              HTML.TableCell('Sat', attribs={'class': 'day-of-week day_sat'})]
 
 
 def pairwise(iterable):
@@ -51,9 +58,8 @@ def translate_title(text):
                      'Choise': 'Курс по выбору',
                      'CHM': 'Численные методы',
                      'TVIMS': 'Тер Вер',
-                     'SC': 'С/К',
-                     'SC1': 'С/К',
-                     'SC2': 'С/К',
+                     'SC1': 'Теория информации',
+                     'SC2': 'Криптография',
                      'OBJ': 'БЖД'}
     if text not in translate_dic:
         return text
@@ -81,7 +87,8 @@ class ScheduleHtmlTableBulder:
     def add_cell(self, new_up_row, new_low_row=None):
         current_up_row, current_low_row = self._get_sub_rows()
         if new_low_row is None:
-            current_up_row.append(convert_text_to_tablecell(new_up_row['text'], html_class=new_up_row['class'], big=True))
+            current_up_row.append(
+                convert_text_to_tablecell(new_up_row['text'], html_class=new_up_row['class'], big=True))
         else:
             current_up_row.append(convert_text_to_tablecell(new_up_row['text'], html_class=new_up_row['class']))
             current_low_row.append(convert_text_to_tablecell(new_low_row['text'], html_class=new_low_row['class']))
@@ -110,3 +117,4 @@ class ScheduleHtmlTableBulder:
             except StopIteration:
                 break
         self._clear_row_iter()
+

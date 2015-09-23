@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <schedule>
     <column day="mon">
+
         <cell>
             <lesson week="all" type="'sem">HC</lesson>
         </cell>
@@ -47,7 +48,7 @@
             <lesson week="all" type="sem">CHM</lesson>
         </cell>
         <cell>
-            <lesson week="upper" type="sem">CHM</lesson>
+            <lesson week="all" type="sem">CHM</lesson>
         </cell>
     </column>
     <column day="tue">
@@ -76,7 +77,7 @@
         </cell>
 
         <cell>
-            <lesson week="all" type="sem">SC2</lesson>
+            <lesson week="all" type="lect">SC2</lesson>
         </cell>
 
         <cell>
