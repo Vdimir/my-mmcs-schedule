@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <schedule>
-   <table>
+    <table>
         <column day="mon">
             <cell>
                 <lesson week="all" type="'sem">HC</lesson>
             </cell>
-
             <cell>
                 <lesson week="all" type="'sem">HC</lesson>
             </cell>
-
             <cell>
                 <lesson week="all" type="lect">DataBase</lesson>
             </cell>
@@ -20,30 +18,23 @@
                 <lesson week="upper" type="lect">Choise</lesson>
                 <lesson week="lower" type="sem">Choise</lesson>
             </cell>
-
         </column>
-
         <column day="tue">
-
             <cell>
                 <lesson week="all" type="sem">OBJ</lesson>
             </cell>
-
             <cell>
                 <lesson week="upper" type="sem">OBJ</lesson>
                 <lesson week="lower" type="sem">DataBase</lesson>
             </cell>
-
             <cell>
                 <lesson week="lower" type="sem">DataBase</lesson>
             </cell>
         </column>
         <column day="wed">
-
-            <cell></cell>
-            <cell></cell>
-            <cell></cell>
-
+            <cell/>
+            <cell/>
+            <cell/>
             <cell>
                 <lesson week="all" type="sem">CHM</lesson>
             </cell>
@@ -54,39 +45,30 @@
         <column day="tue">
         </column>
         <column day="fri">
-
             <cell>
                 <lesson week="all" type="lect">TVIMS</lesson>
             </cell>
-
             <cell>
                 <lesson week="all" type="lect">CHM</lesson>
             </cell>
-
         </column>
-
         <column day="sat">
-
-            <cell></cell>
+            <cell/>
             <cell>
                 <lesson week="all" type="lect">SC1</lesson>
             </cell>
-
             <cell>
                 <lesson week="all" type="sem">TVIMS</lesson>
             </cell>
-
             <cell>
                 <lesson week="all" type="lect">SC2</lesson>
             </cell>
-
             <cell>
                 <lesson week="all" type="sem">SC2</lesson>
             </cell>
         </column>
     </table>
-
-   <courcenames>
+    <courcenames>
         <alias>
             <from>HC</from>
             <to>Гуманитарный курс</to>
@@ -105,7 +87,7 @@
         </alias>
         <alias>
             <from>TVIMS</from>
-            <to>ТВиМС</to>
+            <to>Теория Вероятносей</to>
         </alias>
         <alias>
             <from>SC1</from>
@@ -141,7 +123,5 @@
             <start>15:50</start>
             <end>17:25</end>
         </lesson>
-
     </lessontime>
-
 </schedule>
