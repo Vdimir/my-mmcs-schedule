@@ -1,9 +1,20 @@
 body, html{
     background-color: #333;
-    color: #fff;
     text-align: center;
     text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
     /*box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);*/
+}
+
+.table {
+    margin-top: 10px;
+}
+
+td {
+    color: #fff;
+}
+
+.table-editor {
+    background-color: #333;
 }
 
 .lower {
@@ -20,16 +31,9 @@ body, html{
 
 .highlighted {
     color: rgb(190, 30, 30)
-
 }
 
 .lect {
     font-weight: bold;
 }
 
-/*
-.empty
-{
-    background-color: #080808;
-}
-/**/

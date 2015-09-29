@@ -18,11 +18,28 @@ def write_html(body):
 
 from ScheduleBuilder import ScheduleHtmlTableBulder
 
-table_builder = ScheduleHtmlTableBulder()
-
 fpath = "schedule.xml"
+
 xmltree = ElTree.parse(fpath)
-for day_elem in xmltree.iter('column'):
+course_names = {}
+courseNamesXml = xmltree.find('courcenames')
+for nameAlias in courseNamesXml.iter('alias'):
+    originalName = nameAlias.find('from').text
+    replaceName = nameAlias.find('to').text
+    course_names[originalName] = replaceName
+
+lesson_times = []
+lessonTimeXml = xmltree.find('lessontime')
+for lessonTime in lessonTimeXml.iter('lesson'):
+    startTime = lessonTime.find('start').text
+    endTime = lessonTime.find('end').text
+    lesson_times.append('{0}\n\n-\n\n{1}'.format(startTime,endTime))
+
+
+table_builder = ScheduleHtmlTableBulder(course_names, lesson_times)
+
+tableXml = xmltree.find('table')
+for day_elem in tableXml.iter('column'):
     day_of_week = day_elem.attrib['day']
     for cell in day_elem.iter('cell'):
         up_text = {'text': '', 'class': 'upper'}
