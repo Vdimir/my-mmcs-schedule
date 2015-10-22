@@ -11,14 +11,14 @@ function lowerWeekHighlight() {
 }
 
 function highlightCurrentDayOfWeek(currentDayOfWeek) {
-    var dayOfWeekClassList = ['.day_na', '.day_mon', '.day_tue', '.day_wed', '.day_thu', '.day_fri', '.day_sat'];
+    var dayOfWeekClassList = ['.day-na', '.day-mon', '.day-tue', '.day-wed', '.day-thu', '.day-fri', '.day-sat'];
     $(dayOfWeekClassList[currentDayOfWeek]).addClass('highlighted');
 }
 
 function addDateToHeaderRow() {
     $('.day-of-week').each(function (index) {
         var dateMoment = moment().startOf('week').add(index + 1, 'days');
-        var dateString = dateMoment.format('ddd') + '  ' + dateMoment.format('DD MMM');
+        var dateString = dateMoment.format('ddd') + '  [' + dateMoment.format('DD MMM')+'] ';
         $(this).text(dateString);
     });
 }
@@ -41,5 +41,5 @@ $(function ($) {
     lowerWeekHighlight();
     addDateToHeaderRow();
     highlightCurrentDayOfWeek((new Date()).getDay());
-    setupEditableTable();
+    //setupEditableTable();
 });

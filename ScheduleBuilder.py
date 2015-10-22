@@ -6,13 +6,13 @@ import HTML
 import itertools
 
 
-header_row = [HTML.TableCell('', attribs={'class': ''}),
-              HTML.TableCell('Mon', attribs={'class': 'day-of-week day_mon'}),
-              HTML.TableCell('Tue', attribs={'class': 'day-of-week day_tue'}),
-              HTML.TableCell('Wed', attribs={'class': 'day-of-week day_wed'}),
-              HTML.TableCell('Thu', attribs={'class': 'day-of-week day_thu'}),
-              HTML.TableCell('Fri', attribs={'class': 'day-of-week day_fri'}),
-              HTML.TableCell('Sat', attribs={'class': 'day-of-week day_sat'})]
+header_row = [HTML.TableCell('', attribs={'class': 'time-col'}),
+              HTML.TableCell('Mon', attribs={'class': 'day-of-week day-mon'}),
+              HTML.TableCell('Tue', attribs={'class': 'day-of-week day-tue'}),
+              HTML.TableCell('Wed', attribs={'class': 'day-of-week day-wed'}),
+              HTML.TableCell('Thu', attribs={'class': 'day-of-week day-thu'}),
+              HTML.TableCell('Fri', attribs={'class': 'day-of-week day-fri'}),
+              HTML.TableCell('Sat', attribs={'class': 'day-of-week day-sat'})]
 
 
 def pairwise(iterable):
@@ -26,7 +26,7 @@ class ScheduleHtmlTableBulder:
         self.first_col = first_col
         self.translate_dic = translate_dic
         self.htmltable = HTML.Table(header_row=header_row,
-                                    attribs={'class': 'table table-bordered'},
+                                    # attribs={'class': 'table table-bordered'},
                                     style='',
                                     border=0)
         self._initialize_empty_htmltable()
@@ -59,7 +59,7 @@ class ScheduleHtmlTableBulder:
         attrs = {}
         if big:
             attrs['rowspan'] = 2
-        attrs['class'] = 'text-center col-md-2' + ' ' + html_class
+        attrs['class'] = html_class
         return HTML.TableCell(text_str, attribs=attrs)
 
     # private
@@ -77,6 +77,6 @@ class ScheduleHtmlTableBulder:
     def _initialize_empty_htmltable(self):
         for c in self.first_col:
             self.htmltable.rows.append([
-                HTML.TableCell(c.replace('\n', '<br>'), attribs={'rowspan': 2, 'class': 'time'})
+                HTML.TableCell(c.replace('\n', '<br>'), attribs={'rowspan': 2, 'class': 'time-col'})
             ])
             self.htmltable.rows.append([])

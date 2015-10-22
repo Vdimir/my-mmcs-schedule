@@ -1,0 +1,53 @@
+body, html {
+    background-color: #333;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 14px;
+    /*box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);*/
+}
+
+table {
+    margin-top: 10px;
+    border-collapse: collapse;
+    border-color: #ddd;
+    table-layout: fixed;
+    width: 100%;
+    min-width: 700px;
+}
+
+td {
+    color: #fff;
+    border: 1px solid;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.time-col {
+    width: 45px;
+    overflow: hidden;
+}
+
+.lower {
+    border-top-style: dashed !important;
+}
+
+.upper {
+    border-bottom-style: dashed !important;
+}
+
+.faded {
+    color: dimgray;
+    border-color: inherit;
+}
+
+.highlighted {
+    color: indianred;
+    border-color: inherit;
+    /*font-style: italic;*/
+}
+
+.lect {
+    font-weight: bold;
+}

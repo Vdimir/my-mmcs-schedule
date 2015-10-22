@@ -6,7 +6,7 @@ from ScheduleBuilder import ScheduleHtmlTableBulder
 
 
 def write_html(body):
-    fin = open('html/template.html', 'r')
+    fin = open('template.html', 'r')
     template_str = fin.read()
     template_str = template_str.replace("{{TABLE}}", str(body))
 
