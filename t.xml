@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schedule>
+    <table>
+        <column day="mon">
+            <cell>
+                <lesson week="all" type="lect">Hist</lesson>
+            </cell>
+            <cell>
+                <lesson week="all" type="sem">Phys</lesson>
+            </cell>
+            <cell>
+                <lesson week="all" type="sem">PhysLab</lesson>
+            </cell>
+            <cell>
+                <lesson week="all" type="sem">Sect</lesson>
+            </cell>
+        </column>
+        <column day="tue">
+            <cell>
+                <lesson week="all" type="lect">Inf</lesson>
+            </cell>
+            <cell>
+                <lesson week="all" type="lect">Phys</lesson>
+            </cell>
+            <cell>
+                <lesson week="all" type="sem">Inf</lesson>
+            </cell>
+        </column>
+        <column day="wed">
+            <cell>
+                <lesson week="all" type="sem">Hist</lesson>
+            </cell>
+            <cell>
+                <lesson week="all" type="lect">Geom</lesson>
+            </cell>
+            <cell>
+                <lesson week="upper" type="sem">Geom</lesson>
+                <lesson week="lower" type="sem">Eng</lesson>
+            </cell>
+        </column>
+        <column day="tue">
+            <cell>           
+                 <lesson week="upper" type="lect">Phys</lesson>
+            </cell>
+            <cell/>
+            <cell/>
+            <cell>
+                <lesson week="all" type="sem">Sect</lesson>
+            </cell>
+
+        </column>
+        <column day="fri">
+            <cell>
+                <lesson week="all" type="sem">MA</lesson>
+            </cell>
+            <cell>
+                <lesson week="all" type="lect">MA</lesson>
+            </cell>
+            <cell>          
+                  <lesson week="all" type="sem">Eng</lesson>
+            </cell>
+        </column>
+        <column day="sat">
+        </column>
+    </table>
+    <courcenames>
+        <alias>
+            <from>MA</from>
+            <to>Мат Анализ</to>
+        </alias>
+        <alias>
+            <from>Sect</from>
+            <to>Секция</to>
+        </alias>
+        <alias>
+            <from>Eng</from>
+            <to>Английский язык</to>
+        </alias>
+        <alias>
+            <from>Geom</from>
+            <to>Геометрия</to>
+        </alias>
+        <alias>
+            <from>Inf</from>
+            <to>Информатика</to>
+        </alias>
+        <alias>
+            <from>PhysLab</from>
+            <to>Физ практ</to>
+        </alias>
+        <alias>
+            <from>Phys</from>
+            <to>Физика</to>
+        </alias>
+        <alias>
+            <from>Hist</from>
+            <to>История</to>
+        </alias>
+    </courcenames>
+    <lessontime>
+        <lesson>
+            <start>8:00</start>
+            <end>9:35</end>
+        </lesson>
+        <lesson>
+            <start>9:50</start>
+            <end>11:25</end>
+        </lesson>
+        <lesson>
+            <start>11:55</start>
+            <end>13:30</end>
+        </lesson>
+        <lesson>
+            <start>13:45</start>
+            <end>15:20</end>
+        </lesson>
+        <lesson>
+            <start>15:50</start>
+            <end>17:25</end>
+        </lesson>
+    </lessontime>
+</schedule>
