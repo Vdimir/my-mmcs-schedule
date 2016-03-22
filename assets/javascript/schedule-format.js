@@ -3,7 +3,7 @@ function isOdd(num) {
 }
 
 function lowerWeekHighlight() {
-    if (isOdd(moment().week())) {
+    if (!isOdd(moment().week())) {
         $('.upper').addClass('faded');
     } else {
         $('.lower').addClass('faded');

@@ -2,106 +2,79 @@
 <schedule>
     <table>
         <column day="mon">
+            <cell></cell>
+            <cell></cell>
             <cell>
-                <lesson week="all" type="'sem">HC</lesson>
+                <lesson week="upper" type="lect">TSP</lesson>
             </cell>
             <cell>
-                <lesson week="all" type="'sem">HC</lesson>
+                <lesson week="upper" type="sem">TSP</lesson>
             </cell>
             <cell>
-                <lesson week="all" type="lect">DataBase</lesson>
-            </cell>
-            <cell>
-                <lesson week="all" type="sem">Choise</lesson>
-            </cell>
-            <cell>
-                <lesson week="upper" type="lect">Choise</lesson>
-                <lesson week="lower" type="sem">Choise</lesson>
+                <lesson week="all" type="lect">COS</lesson>
             </cell>
         </column>
         <column day="tue">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
             <cell>
-                <lesson week="all" type="sem">OBJ</lesson>
+                <lesson week="lower" type="sem">Graph</lesson>
             </cell>
             <cell>
-                <lesson week="upper" type="sem">OBJ</lesson>
-                <lesson week="lower" type="sem">DataBase</lesson>
+                <lesson week="all" type="lect">Graph</lesson>
             </cell>
             <cell>
-                <lesson week="lower" type="sem">DataBase</lesson>
-            </cell>
-        </column>
-        <column day="wed">
-            <cell/>
-            <cell/>
-            <cell/>
-            <cell>
-                <lesson week="all" type="sem">CHM</lesson>
-            </cell>
-            <cell>
-                <lesson week="all" type="sem">CHM</lesson>
+                <lesson week="lower" type="sem">Graph</lesson>
             </cell>
         </column>
-        <column day="tue">
-        </column>
+        <column day="wed"></column>
+        <column day="tue"></column>
         <column day="fri">
+
+            <cell></cell>
+            <cell></cell>
             <cell>
-                <lesson week="all" type="lect">TVIMS</lesson>
+                <lesson week="all" type="lect">CH</lesson>
             </cell>
             <cell>
-                <lesson week="all" type="lect">CHM</lesson>
+                <lesson week="all" type="lect">CH</lesson>
             </cell>
         </column>
         <column day="sat">
-            <cell/>
+            <cell></cell>
+            <cell></cell>
             <cell>
-                <lesson week="all" type="lect">SC1</lesson>
+                <lesson week="all" type="lect">SK</lesson>
             </cell>
             <cell>
-                <lesson week="all" type="sem">TVIMS</lesson>
-            </cell>
-            <cell>
-                <lesson week="all" type="lect">SC2</lesson>
-            </cell>
-            <cell>
-                <lesson week="all" type="sem">SC2</lesson>
+                <lesson week="all" type="lect">SK</lesson>
             </cell>
         </column>
     </table>
     <courcenames>
         <alias>
-            <from>HC</from>
-            <to>Гуманитарный курс</to>
+            <from>CH</from>
+            <to>Курс по выбору</to>
         </alias>
         <alias>
-            <from>DataBase</from>
-            <to>Базы данных</to>
+            <from>TSP</from>
+            <to>Теория случ процессов</to>
         </alias>
         <alias>
-            <from>Choise</from>
-            <to>ММЭН</to>
+            <from>SK</from>
+            <to>Спец курс</to>
         </alias>
         <alias>
-            <from>CHM</from>
-            <to>Численные методы</to>
+            <from>Graph</from>
+            <to>Комп граф</to>
         </alias>
         <alias>
-            <from>TVIMS</from>
-            <to>Тервер</to>
-        </alias>
-        <alias>
-            <from>SC1</from>
-            <to>Теория информации</to>
-        </alias>
-        <alias>
-            <from>SC2</from>
-            <to>Криптография</to>
-        </alias>
-        <alias>
-            <from>OBJ</from>
-            <to>БЖД</to>
+            <from>COS</from>
+            <to>Цифр Обр Сигналов</to>
         </alias>
     </courcenames>
+
     <lessontime>
         <lesson>
             <start>8:00</start>
@@ -122,6 +95,10 @@
         <lesson>
             <start>15:50</start>
             <end>17:25</end>
+        </lesson>
+        <lesson>
+            <start>17:40</start>
+            <end>19:15</end>
         </lesson>
     </lessontime>
 </schedule>
